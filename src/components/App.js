@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import {RootURL} from '../RootURL';
 
+import DeckList from '../containers/DeckList/DeckList';
+
 class App extends Component {
 
 
   render() {
     return (
       <div>
-        <p>inCheck!</p>
+        <DeckList />
       </div>
     );
   }

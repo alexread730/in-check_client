@@ -1,0 +1,11 @@
+.deck-list {
+  width: 100%;
+}
+
+.deck-item {
+  display: inline-block;
+  width: 45%;
+  border: 2px solid black;
+  margin: 1em .5em;
+  padding: .5em;
+}
