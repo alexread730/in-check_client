@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {RootURL} from '../RootURL';
 
 import DeckList from '../containers/DeckList/DeckList';
+import DeckDetail from '../containers/DeckDetail/DeckDetail';
 
 class App extends Component {
 
@@ -10,6 +11,7 @@ class App extends Component {
     return (
       <div>
         <DeckList />
+        <DeckDetail />
       </div>
     );
   }
