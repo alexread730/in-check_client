@@ -20,7 +20,10 @@ class DeckList extends Component {
     return (
       deckData.map(data => {
         console.log(data);
-        return (<div key={data.name} className="deck-item">{data.name}</div>)
+        return (<div key={data.name} className="deck-item">
+          <h2>{data.name}</h2>
+          <p>{data.description}</p>
+        </div>)
       })
     )
   }
