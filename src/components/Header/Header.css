@@ -1,0 +1,22 @@
+.header {
+  width: 100%;
+  background-color: #0C1319;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  text-align: center;
+  padding: 0em 1em;
+}
+
+.nav-elements li{
+  display: inline;
+  margin: 2em 1em 0 1em;
+}
+
+.nav-elements {
+  padding-top: 10px;
+}
