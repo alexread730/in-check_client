@@ -1,8 +1,12 @@
-export default function() {
-  return [
-    { name: 'Organic Chemistry', cards: 100 },
-    { name: 'Javascript', cards: 80 },
-    { name: 'Computer Science', cards: 65 },
-    { name: 'Star Wars', cards: 69 }
-  ]
+import { FETCH_DECKS } from '../actions/index';
+
+export default function(state = [], action) {
+  console.log('action received', action);
+
+  switch (action.type) {
+    case FETCH_DECKS:
+      return [ action.payload.data, ...state]
+  }
+
+  return state;
 }
