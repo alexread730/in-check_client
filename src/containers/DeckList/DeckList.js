@@ -16,7 +16,6 @@ class DeckList extends Component {
   }
 
   renderList(deckData) {
-    console.log(deckData);
     return (
       deckData.map(data => {
         return (

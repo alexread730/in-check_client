@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchDeckCards } from '../../actions/index';
 import './DeckDetail.css';
 
 class DeckDetail extends Component {
+
+  constructor(props) {
+    super();
+  }
+
+  componentWillMount() {
+    this.props.fetchDeckCards(this.props.match.params.deck_id);
+  }
+
   render() {
 
     return (
@@ -13,10 +24,12 @@ class DeckDetail extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    deck: state.activeDeck
-  };
+function mapStateToProps({ cards }) {
+  return { cards }
 }
 
-export default connect(mapStateToProps)(DeckDetail);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchDeckCards }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DeckDetail);
