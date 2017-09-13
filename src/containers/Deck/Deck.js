@@ -11,7 +11,7 @@ export default class Deck extends Component {
 
   render() {
     return(
-        <Link to="deck-detail" key={this.props.details.name} className="deck-item">
+        <Link to={`deck-detail/${this.props.details.id}`} key={this.props.details.name} className="deck-item">
           <h2>{this.props.details.name}</h2>
           <p>{this.props.details.description}</p>
         </Link>
