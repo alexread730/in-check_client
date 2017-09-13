@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 
 import Header from './Header/Header';
 import DeckList from './DeckList/DeckList';
-import DeckDetail from '../containers/DeckDetail/DeckDetail';
+import DetailsContainer from '../components/DetailsContainer/DetailsContainer';
 
 class App extends Component {
 
@@ -14,7 +14,7 @@ class App extends Component {
       <div>
         <Route path="/" component={Header} />
         <Route path="/decks" component={DeckList} />
-        <Route path="/deck-detail" component={DeckDetail} />
+        <Route path="/deck-detail" component={DetailsContainer} />
       </div>
     );
   }

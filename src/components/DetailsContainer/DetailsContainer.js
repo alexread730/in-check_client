@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Deck from '../../containers/Deck/Deck';
-import './DeckList.css';
+import DeckDetail  from '../../containers/DeckDetail/DeckDetail';
 
 export default class DeckList extends Component {
 
@@ -11,9 +10,9 @@ export default class DeckList extends Component {
   render() {
     return(
       <section >
-        <h1 className="title">Decks</h1>
-        <div className="deck-list">
-          <Deck />
+        <h1 className="title">Your Deck</h1>
+        <div className="card-list">
+          <DeckDetail />
         </div>
       </section>
     )
