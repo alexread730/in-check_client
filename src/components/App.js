@@ -14,7 +14,7 @@ class App extends Component {
       <div>
         <Route path="/" component={Header} />
         <Route path="/decks" component={DeckList} />
-        <Route path="/deck-detail" component={DeckDetail} />
+        <Route name="deck-detail" path="/deck-detail/:deck_id" component={DeckDetail} />
       </div>
     );
   }

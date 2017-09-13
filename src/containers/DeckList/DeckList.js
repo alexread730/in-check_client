@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchDecks } from '../../actions/index';
-import { Link } from 'react-router-dom';
+import  Deck from '../Deck/Deck'
 import './DeckList.css';
 
 class DeckList extends Component {
@@ -19,10 +19,9 @@ class DeckList extends Component {
     console.log(deckData);
     return (
       deckData.map(data => {
-        return (<Link to="/deck-detail" key={data.name} className="deck-item">
-          <h2>{data.name}</h2>
-          <p>{data.description}</p>
-        </Link>)
+        return (
+          <Deck details={data}/>
+        )
       })
     )
   }
