@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { fetchDeckCards } from '../../actions/index';
 import { fetchDeckInfo } from '../../actions/index';
 
+import Card from '../../components/Card/Card';
 import { Checkbox } from 'semantic-ui-react'
 import { Dropdown, Menu } from 'semantic-ui-react'
 import './DeckDetail.css';
@@ -25,18 +26,33 @@ class DeckDetail extends Component {
     this.props.fetchDeckInfo(this.props.match.params.deck_id);
   }
 
+  renderCards(cardData) {
+    return (
+      cardData.map(data => {
+        return (
+          <Card details={data}/>
+        )
+      })
+    )
+  }
+
   render() {
 
     if(this.props.deckInfo.length > 0 && this.props.cards.length > 0) {
           return (
             <div className="container">
-              <h1 className="title">{this.props.deckInfo[0].name}</h1>
-              <section className="deck-details">
-                <h2>Cards: {this.props.cards[0].length}</h2>
-                <Checkbox label="Active" defaultChecked={true} toggle />
-                <Menu compact>
-                  <Dropdown label="Inteval" placeholder='Interval' options={options} labeled simple item />
-                </Menu>
+              <section>
+                <h1 className="title">{this.props.deckInfo[0].name}</h1>
+                <section className="deck-details">
+                  <h2>Cards: {this.props.cards[0].length}</h2>
+                  <Checkbox label="Active" defaultChecked={true} toggle />
+                  <Menu compact>
+                    <Dropdown label="Inteval" placeholder='Interval' options={options} labeled simple item />
+                  </Menu>
+                </section>
+              </section>
+              <section>
+                {this.props.cards.map(this.renderCards)}
               </section>
             </div>
           )
