@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchDecks } from '../../actions/index';
 import { Link } from 'react-router-dom';
-import './DeckList.css';
+import './Deck.css';
 
-class DeckList extends Component {
+class Deck extends Component {
 
   constructor(props) {
     super();
@@ -47,5 +47,5 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchDecks }, dispatch);
 }
 
-//Promote DeckList to container - needs access to dispatch method 'selectDeck', making it available as a prop.
-export default connect(mapStateToProps, mapDispatchToProps)(DeckList);
+//Promote Deck to container - needs access to dispatch method 'selectDeck', making it available as a prop.
+export default connect(mapStateToProps, mapDispatchToProps)(Deck);

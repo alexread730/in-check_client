@@ -6,7 +6,7 @@ import ReduxPromise from 'redux-promise';
 
 import './index.css';
 import App from './components/App';
-import { ReactRouter, BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import rootReducer from './reducers/index';
 import registerServiceWorker from './registerServiceWorker';
 

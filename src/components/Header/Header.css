@@ -10,13 +10,20 @@
 .logo {
   text-align: center;
   padding: 0em 1em;
+  margin-top: 1em;
 }
 
 .nav-elements li{
   display: inline;
-  margin: 2em 1em 0 1em;
+  margin: 1em 1em 0 1em;
+  font-size: 1.5em;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
 }
 
 .nav-elements {
-  padding-top: 10px;
+  padding-top: .25em;
 }
