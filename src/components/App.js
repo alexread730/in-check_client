@@ -3,7 +3,7 @@ import {RootURL} from '../RootURL';
 import { Route } from 'react-router-dom';
 
 import Header from './Header/Header';
-import DeckList from '../containers/DeckList/DeckList';
+import DeckList from './DeckList/DeckList';
 import DeckDetail from '../containers/DeckDetail/DeckDetail';
 
 class App extends Component {

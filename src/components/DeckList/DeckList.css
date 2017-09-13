@@ -1,0 +1,11 @@
+.deck-list {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 3em;
+  padding-top: 2em;
+}

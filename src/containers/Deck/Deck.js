@@ -29,12 +29,9 @@ class Deck extends Component {
 
   render() {
     return(
-      <section >
-        <h1 className="title">Decks</h1>
         <div className="deck-list">
           {this.props.decks.map(this.renderList)}
         </div>
-      </section>
     )
   }
 }
