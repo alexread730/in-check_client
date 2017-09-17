@@ -8,6 +8,7 @@ import { updateDeckInterval } from '../../actions/actions_interval';
 import Card from '../../components/Card/Card';
 import { Checkbox } from 'semantic-ui-react'
 import { Dropdown, Menu } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 import './DeckDetail.css';
 
 const options = [
@@ -22,7 +23,13 @@ class DeckDetail extends Component {
   constructor(props) {
     super();
 
+    this.state = {
+      numCompleted: 1
+    }
+
     this.changeInterval = this.changeInterval.bind(this);
+    this.renderCards = this.renderCards.bind(this);
+    this.addCompleted = this.addCompleted.bind(this);
   }
 
   componentWillMount() {
@@ -36,11 +43,22 @@ class DeckDetail extends Component {
     this.props.fetchDeckInfo(this.props.match.params.deck_id);
   }
 
+  addCompleted() {
+    const numCompleted = {...this.state};
+    this.state.numCompleted = this.state.numCompleted + 1
+    console.log('boom');
+    this.setState(
+      numCompleted
+    )
+  }
+
+
   renderCards(cardData) {
     return (
       cardData.map(data => {
+        console.log(this);
         return (
-          <Card details={data}/>
+          <Card details={data} addCompleted={this.addCompleted}/>
         )
       })
     )
@@ -54,11 +72,14 @@ class DeckDetail extends Component {
               <section>
                 <h1 className="title">{this.props.deckInfo[0].name}</h1>
                 <section className="deck-details">
-                  <h2>Cards: {this.props.cards[0].length}</h2>
+                  <h3>Cards Completed: {this.state.numCompleted}/{this.props.cards[0].length}</h3>
                   <Checkbox label="Active" defaultChecked={true} toggle />
                   <Menu compact>
                     <Dropdown label="Inteval" defaultValue={this.props.deckInfo[0].interval} placeholder='Interval' options={options} labeled simple item onChange={this.changeInterval}/>
                   </Menu>
+                  <Button icon color={"teal"} size="mini">
+                    Edit Deck
+                  </Button>
                 </section>
               </section>
               <section>
