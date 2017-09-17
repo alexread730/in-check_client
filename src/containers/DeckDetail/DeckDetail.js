@@ -6,17 +6,11 @@ import { fetchDeckInfo } from '../../actions/index';
 import { updateDeckInterval } from '../../actions/actions_interval';
 
 import Card from '../../components/Card/Card';
+import DeckForm from '../DeckForm/DeckForm';
 import { Checkbox } from 'semantic-ui-react'
-import { Dropdown, Menu } from 'semantic-ui-react'
-import { Button, Icon } from 'semantic-ui-react'
+import { Button, Header, Modal} from 'semantic-ui-react'
 import './DeckDetail.css';
 
-const options = [
-  { key: 1, text: '5 min', value: 5 },
-  { key: 2, text: '10 min', value: 10 },
-  { key: 3, text: '15 min', value: 15 },
-  { key: 4, text: '1 min', value: 1 },
-]
 
 class DeckDetail extends Component {
 
@@ -27,7 +21,6 @@ class DeckDetail extends Component {
       numCompleted: 1
     }
 
-    this.changeInterval = this.changeInterval.bind(this);
     this.renderCards = this.renderCards.bind(this);
     this.addCompleted = this.addCompleted.bind(this);
   }
@@ -37,16 +30,9 @@ class DeckDetail extends Component {
     this.props.fetchDeckInfo(this.props.match.params.deck_id);
   }
 
-  changeInterval(e, data) {
-    console.log(data.value);
-    this.props.updateDeckInterval(this.props.match.params.deck_id, data.value);
-    this.props.fetchDeckInfo(this.props.match.params.deck_id);
-  }
-
   addCompleted() {
     const numCompleted = {...this.state};
     this.state.numCompleted = this.state.numCompleted + 1
-    console.log('boom');
     this.setState(
       numCompleted
     )
@@ -56,7 +42,6 @@ class DeckDetail extends Component {
   renderCards(cardData) {
     return (
       cardData.map(data => {
-        console.log(this);
         return (
           <Card details={data} addCompleted={this.addCompleted}/>
         )
@@ -74,12 +59,15 @@ class DeckDetail extends Component {
                 <section className="deck-details">
                   <h3>Cards Completed: {this.state.numCompleted}/{this.props.cards[0].length}</h3>
                   <Checkbox label="Active" defaultChecked={true} toggle />
-                  <Menu compact>
-                    <Dropdown label="Inteval" defaultValue={this.props.deckInfo[0].interval} placeholder='Interval' options={options} labeled simple item onChange={this.changeInterval}/>
-                  </Menu>
-                  <Button icon color={"teal"} size="mini">
-                    Edit Deck
-                  </Button>
+                  <Modal trigger={<Button color="teal">Edit Deck</Button>}>
+                    <Modal.Header>Edit Deck</Modal.Header>
+                    <Modal.Content image>
+                      <Modal.Description>
+                        <Header></Header>
+                        <DeckForm match={this.props.match}/>
+                      </Modal.Description>
+                    </Modal.Content>
+                  </Modal>
                 </section>
               </section>
               <section>

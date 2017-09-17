@@ -14,7 +14,7 @@ export default class Card extends Component {
 
 
   componentDidMount() {
-    if (this.props.details.completed == true) {
+    if (this.props.details.completed === true) {
       this.props.addCompleted();
     }
   }

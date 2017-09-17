@@ -3,6 +3,8 @@ import axios from 'axios';
 const url = 'http://localhost:3000/api/v1/accounts/1/decks'
 
 export const UPDATE_INTERVAL = 'UPDATE_INTERVAL';
+export const EDIT_DECK = 'EDIT_DECK';
+export const UPDATE_DECK_FORM = 'UPDATE_DECK_FORM';
 
 export function updateDeckInterval(id, interval) {
   const request = axios.put(`${url}/${id}`, {
@@ -14,3 +16,25 @@ export function updateDeckInterval(id, interval) {
     payload: request
   };
 }
+
+export function editDeckInfo(id) {
+  const props = {
+    "interval": 3
+  }
+  const request = axios.put(`${url}/${id}`, props);
+
+  return {
+    type: EDIT_DECK,
+    payload: request
+  };
+}
+
+export const changeDeckForm = ({property, value}) => {
+  return {
+    type: UPDATE_DECK_FORM,
+    payload: {
+      property,
+      value
+    }
+  };
+};
