@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import LoginForm from '../LoginForm/LoginForm';
+import SignupForm from '../SignupForm/SignupForm';
 
 
 import { Button, Header, Modal} from 'semantic-ui-react'
@@ -25,6 +27,7 @@ class Home extends Component {
                 <Modal.Content image>
                   <Modal.Description>
                     <Header></Header>
+                    <LoginForm />
                   </Modal.Description>
                 </Modal.Content>
               </Modal>
@@ -37,6 +40,7 @@ class Home extends Component {
                 <Modal.Content image>
                   <Modal.Description>
                     <Header></Header>
+                    <SignupForm />
                   </Modal.Description>
                 </Modal.Content>
               </Modal>
