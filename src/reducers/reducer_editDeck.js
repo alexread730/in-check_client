@@ -1,4 +1,4 @@
-import { EDIT_DECK, UPDATE_DECK_FORM } from '../actions/actions_interval';
+import { EDIT_DECK, UPDATE_DECK_FORM, RESET_FORM } from '../actions/actions_interval';
 
 const INITIAL_STATE = {
   deck_id: 0,
@@ -19,6 +19,8 @@ export default function(state = INITIAL_STATE, action) {
       }
     case EDIT_DECK:
       return [ action.payload.data ];
+    case RESET_FORM:
+      return INITIAL_STATE;
     default:
       return state;
   }

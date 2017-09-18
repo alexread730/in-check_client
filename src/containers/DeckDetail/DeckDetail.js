@@ -55,7 +55,7 @@ class DeckDetail extends Component {
           return (
             <div className="container">
               <section>
-                <h1 className="title">{this.props.deckInfo[0].name}</h1>
+                <h1 className="title">{this.props.deckInfo[0][0].name}</h1>
                 <section className="deck-details">
                   <h3>Cards Completed: {this.state.numCompleted}/{this.props.cards[0].length}</h3>
                   <Checkbox label="Active" defaultChecked={true} toggle />

@@ -26,3 +26,8 @@
 .day-box {
   margin: 5px;
 }
+
+.button {
+  max-height: 3em;
+  margin-left: 10px;
+}
