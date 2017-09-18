@@ -16,7 +16,9 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="logo">
-          <h2>Logo</h2>
+          <NavLink to="/home" exact>
+            <h2>Logo</h2>
+          </NavLink>
         </div>
         <ul className="nav-elements">
           <li><NavLink to="/decks" exact
@@ -31,22 +33,6 @@ class Header extends Component {
               className="nav-link">Account</NavLink></li>
         </ul>
       </div>
-      // <Menu color={'blue'}
-      //   size={"massive"}
-      // className="ui.menu">
-      //   <Menu.Item name='Logo' active={activeItem === 'logo'} onClick={this.handleItemClick}>
-      //     Logo
-      //   </Menu.Item>
-      //   <Menu.Menu position='right'>
-      //     <Menu.Item name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick}>
-      //       Decks
-      //     </Menu.Item>
-      //
-      //     <Menu.Item name='help' active={activeItem === 'help'} onClick={this.handleItemClick}>
-      //       Account
-      //     </Menu.Item>
-      //   </Menu.Menu>
-      // </Menu>
     );
   }
 }
