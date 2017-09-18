@@ -18,7 +18,7 @@ export default function(state = INITIAL_STATE, action) {
         [action.payload.property]: action.payload.value
       }
     case EDIT_DECK:
-      return [ action.payload.data ];
+      return INITIAL_STATE;
     case RESET_FORM:
       return INITIAL_STATE;
     default:

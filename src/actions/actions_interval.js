@@ -17,7 +17,7 @@ export function updateDeckInterval(id, interval) {
   };
 }
 
-export function editDeckInfo(props) {
+export function editDeckInterval(props) {
   const request = axios.put(`${url}/${props.deck_id}`, props);
   return {
     type: EDIT_DECK,

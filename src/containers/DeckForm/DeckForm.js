@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { editDeckInfo, changeDeckForm, resetForm } from '../../actions/actions_interval';
+import { editDeckInterval, changeDeckForm, resetForm } from '../../actions/actions_interval';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { INTERVAL_OPTIONS, HOUR_OPTIONS } from '../../common';
 
-import { Button, Icon, Form, Checkbox, Dropdown, Menu } from 'semantic-ui-react'
+import { Button, Form, Checkbox, Dropdown, Menu } from 'semantic-ui-react'
 
 
 class DeckForm extends Component {
@@ -16,11 +16,15 @@ class DeckForm extends Component {
   }
 
   componentDidMount() {
-    this.props.changeDeckForm({property: 'deck_id'}, this.props.match.params.deck_id)
+    const daysArray = this.props.deckInfo[0].map(deck => {
+      return deck.day_id;
+    })
+    this.props.changeDeckForm({property: 'deck_id'}, this.props.match.params.deck_id);
+    this.props.changeDeckForm({property: 'deckDays'}, daysArray);
   }
 
   handleSubmit(e) {
-    this.props.editDeckInfo(this.props.deckForm);
+    this.props.editDeckInterval(this.props.deckForm);
     window.location.reload();
   }
 
@@ -33,8 +37,10 @@ class DeckForm extends Component {
     } else if (data.type === "dropdown") {
       this.props.changeDeckForm({property: data.name}, data.value);
     } else if (data.type === "checkbox"){
-     daysArray.push(data.value)
-     this.props.changeDeckForm({property: data.name}, daysArray);
+      if (!daysArray.find(value => {return value === data.value})) {
+       daysArray.push(data.value)
+       this.props.changeDeckForm({property: data.name}, daysArray);
+      }
    }
   }
 
@@ -75,7 +81,6 @@ class DeckForm extends Component {
           <input type="text" placeholder='Deck Description' name="deckDesc" width={4} onChange={this.handleChange}/>
         </Form.Field>
         <Button type='submit' color="teal" onSubmit={this.handleSubmit}>Save</Button>
-        <Button color="red">Cancel</Button>
       </Form>
     )
   }
@@ -86,7 +91,7 @@ function mapStateToProps({ deckForm, deckInfo }) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ editDeckInfo, changeDeckForm, resetForm }, dispatch);
+  return bindActionCreators({ editDeckInterval, changeDeckForm, resetForm }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckForm);
