@@ -26,7 +26,7 @@ export default class Card extends Component {
           <p className="def">{this.props.details.definition}</p>
           <p className="hint">Hint: {this.props.details.hint}</p>
           <Checkbox label='Completed' checked={this.props.details.completed}/>
-          <Button icon color={"teal"} size="mini" className="small-btn">
+          <Button icon color={"green"} size="mini" className="small-btn">
             <Icon name='edit' />
           </Button>
           <Button icon size="mini" color={"red"}>

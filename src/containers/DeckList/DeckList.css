@@ -8,13 +8,13 @@
   display: inline-block;
   width: 45%;
   max-width: 400px;
-  border: 2px solid black;
+  border: 2px solid #0C1319;
   border-radius: 5px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  background-color: #9AD0E6;
+  /*background-color: #DDFDFF;*/
   margin: 1em auto;
   padding: .5em;
-  color: black;
+  color: #0C1319;
 }
 
 .deck-item:hover {
@@ -29,4 +29,9 @@
   text-align: center;
   font-size: 3em;
   padding-top: 2em;
+  color: #29BF12;
+}
+
+body {
+  /*background-color: #9AD0E6;*/
 }

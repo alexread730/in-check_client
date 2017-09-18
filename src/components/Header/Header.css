@@ -1,16 +1,28 @@
+
+
 .header {
   width: 100%;
-  background-color: #0C1319;
-  color: white;
+  background-color: #ffffff;
+  color: #29BF12;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5em;
 }
 
 .logo {
   text-align: center;
-  padding: 0em 1em;
-  margin-top: 1em;
+  padding: 0em .8em;
+  margin-top: .5em;
+  color: #29BF12;
+  text-decoration: none;
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.25em;
+}
+
+.logo:hover {
+  color: #290C31;
 }
 
 .nav-elements li{
@@ -20,8 +32,12 @@
 }
 
 .nav-link {
-  color: white;
+  color: #29BF12;
   text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #290C31;
 }
 
 .nav-elements {

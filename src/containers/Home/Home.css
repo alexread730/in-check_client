@@ -1,12 +1,20 @@
 .landing {
-  margin: 2em 0;
+  margin: 2em 2em;;
   width: 100vw;
   height: 60vh;
-  background-color: #9AD0E6;
+  color: #290C31;
 }
 
+.welcome {
+  color: #29BF12;
+  margin-left: 1.5em;
+  /*font-family: 'Indie Flower', cursive;*/
+  /*font-size: 2em;*/
+}
+
+
 .login-signup {
-  width: 60vw;
+  width: 70vw;
   margin: 5em auto;
   display: flex;
   flex-direction: row;

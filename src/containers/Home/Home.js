@@ -17,12 +17,12 @@ class Home extends Component {
     return (
       <div>
         <section className="landing">
-          <h2>Welcome to in-Check!</h2>
+          <h2 className="welcome">Welcome to in-Check!</h2>
           <div className="login-signup">
             <div className="login-box">
               <h4>Login</h4>
               <p>Here is where you login.</p>
-              <Modal size="mini" trigger={<Button color="teal">Log In</Button>}>
+              <Modal size="mini" trigger={<Button color="green">Log In</Button>}>
                 <Modal.Header>Login</Modal.Header>
                 <Modal.Content image>
                   <Modal.Description>
@@ -35,7 +35,7 @@ class Home extends Component {
             <div className="signup-box">
               <h4>Sign-Up</h4>
               <p>Here is where you sign-up.</p>
-              <Modal size="mini" trigger={<Button color="teal">Log In</Button>}>
+              <Modal size="mini" trigger={<Button color="green">Log In</Button>}>
                 <Modal.Header>Sign-Up</Modal.Header>
                 <Modal.Content image>
                   <Modal.Description>

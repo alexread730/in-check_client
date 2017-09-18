@@ -59,7 +59,7 @@ class DeckDetail extends Component {
                 <section className="deck-details">
                   <h3>Cards Completed: {this.state.numCompleted}/{this.props.cards[0].length}</h3>
                   <Checkbox label="Active" defaultChecked={true} toggle />
-                  <Modal trigger={<Button color="teal">Edit Deck</Button>}>
+                  <Modal trigger={<Button color="green">Edit Deck</Button>}>
                     <Modal.Header>Edit Deck</Modal.Header>
                     <Modal.Content image>
                       <Modal.Description>
