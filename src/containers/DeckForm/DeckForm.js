@@ -40,8 +40,17 @@ class DeckForm extends Component {
       if (!daysArray.find(value => {return value === data.value})) {
        daysArray.push(data.value)
        this.props.changeDeckForm({property: data.name}, daysArray);
-      }
+     } else {
+       const index = daysArray.indexOf(data.value);
+       daysArray.splice(index, 1);
+       this.props.changeDeckForm({property: data.name}, daysArray);
+     }
    }
+  }
+
+  checkDays(day) {
+    console.log(day);
+    return this.props.deckForm.deckDays.find(value => {return value === day}) ? true : false
   }
 
   render() {
@@ -50,13 +59,20 @@ class DeckForm extends Component {
 
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
-          <Checkbox  className="day-box" label='S' name="deckDays" value={1} onChange={this.handleChange} />
-          <Checkbox className="day-box" label='M' name="deckDays" value={2} onChange={this.handleChange}/>
-          <Checkbox  className="day-box" label='Tues' name="deckDays" value={3} onChange={this.handleChange} />
-          <Checkbox className="day-box" label='W' name="deckDays" value={4} onChange={this.handleChange}/>
-          <Checkbox className="day-box" label='Th' name="deckDays" value={5} onChange={this.handleChange}/>
-          <Checkbox className="day-box" label='F' name="deckDays" value={6} onChange={this.handleChange}/>
-          <Checkbox className="day-box" label='Sat' name="deckDays" value={7} onChange={this.handleChange}/>
+          <Checkbox  className="day-box" label='S' name="deckDays" value={1} onClick={this.handleChange}
+            checked={this.checkDays(1)} />
+          <Checkbox className="day-box" label='M' name="deckDays" value={2} onClick={this.handleChange}
+            checked={this.checkDays(2)} />
+          <Checkbox  className="day-box" label='Tues' name="deckDays" value={3} onChange={this.handleChange}
+            checked={this.checkDays(3)}/>
+          <Checkbox className="day-box" label='W' name="deckDays" value={4} onChange={this.handleChange}
+            checked={this.checkDays(4)}/>
+          <Checkbox className="day-box" label='Th' name="deckDays" value={5} onChange={this.handleChange}
+            checked={this.checkDays(5)} />
+          <Checkbox className="day-box" label='F' name="deckDays" value={6} onChange={this.handleChange}
+            checked={this.checkDays(6)} />
+          <Checkbox className="day-box" label='Sat' name="deckDays" value={7} onChange={this.handleChange}
+            checked={this.checkDays(7)} />
         </Form.Field>
         <Form.Field required>
           <h5>Start Time</h5>
