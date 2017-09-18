@@ -1,0 +1,25 @@
+.landing {
+  margin: 2em 0;
+  width: 100vw;
+  height: 60vh;
+  background-color: #9AD0E6;
+}
+
+.login-signup {
+  width: 60vw;
+  margin: 5em auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.login-box {
+  flex: 1;
+  border-right: 1px solid black;
+}
+
+.signup-box {
+  flex: 1;
+}
