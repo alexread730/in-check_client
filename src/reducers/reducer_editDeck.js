@@ -4,9 +4,9 @@ const INITIAL_STATE = {
   deck_id: 0,
   deckName: '',
   deckDesc: '',
-  starTime: 0,
+  startTime: 0,
   endTime: 23,
-
+  deckDays: []
 }
 
 export default function(state = INITIAL_STATE, action) {
