@@ -18,12 +18,12 @@ export function updateDeckInterval(id, interval) {
 }
 
 export function editDeckInfo(props) {
-
+console.log(props);
   const request = axios.put(`${url}/${props.deck_id}`, props);
 
   return {
     type: EDIT_DECK,
-    payload: props
+    payload: request
   };
 }
 
