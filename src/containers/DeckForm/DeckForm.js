@@ -30,9 +30,9 @@ class DeckForm extends Component {
 
     if (!data) {
       this.props.changeDeckForm({property: event.target.name}, event.target.value);
-    } else if (data.type == "dropdown") {
+    } else if (data.type === "dropdown") {
       this.props.changeDeckForm({property: data.name}, data.value);
-    } else if (data.type == "checkbox"){
+    } else if (data.type === "checkbox"){
      daysArray.push(data.value)
      this.props.changeDeckForm({property: data.name}, daysArray);
    }
