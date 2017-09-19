@@ -6,6 +6,8 @@ export const FETCH_DECKS = 'FETCH_DECKS';
 export const FETCH_ONE_DECK = 'FETCH_ONE_DECK';
 export const FETCH_DECK_INFO = 'FETCH_DECK_INFO';
 export const CREATE_CARD = 'CREATE_CARD';
+export const UPDATE_CARD_FORM = 'UPDATE_CARD_FORM';
+
 
 export function fetchDecks() {
   const request = axios.get(url);
@@ -34,11 +36,22 @@ export function fetchDeckInfo(id) {
   };
 }
 
-export function createCard(id) {
-  const request = axios.post(`${url}/${id}`);
+export function addCard(card) {
+  console.log(card);
+  const request = axios.post(`${url}/${card.deck_id}/card`, card);
 
   return {
     type: CREATE_CARD,
     payload: request
+  }
+}
+
+export function updateCardForm({property}, value) {
+  return {
+    type: UPDATE_CARD_FORM,
+    payload: {
+      property,
+      value
+    }
   }
 }

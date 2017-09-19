@@ -31,3 +31,11 @@
   max-height: 3em;
   margin-left: 10px;
 }
+
+.create-card-btn {
+  margin: 1em auto;
+}
+
+.card-item {
+  justify-content: space-around;
+}

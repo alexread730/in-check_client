@@ -7,6 +7,7 @@ import { updateDeckInterval } from '../../actions/actions_interval';
 
 import Card from '../../components/Card/Card';
 import DeckForm from '../DeckForm/DeckForm';
+import NewCardForm from '../NewCardForm/NewCardFrom';
 import { Checkbox } from 'semantic-ui-react'
 import { Button, Header, Modal} from 'semantic-ui-react'
 import './DeckDetail.css';
@@ -71,6 +72,20 @@ class DeckDetail extends Component {
                 </section>
               </section>
               <section>
+                <div className="card-item">
+                  <Modal trigger={<Button icon color={"blue"} size="mini" className="create-card-btn">
+                    Create New Card
+                  </Button>}>
+                    <Modal.Header>Create Card</Modal.Header>
+                    <Modal.Content image>
+                      <Modal.Description>
+                        <Header></Header>
+                        <NewCardForm match={this.props.match}/>
+                      </Modal.Description>
+                    </Modal.Content>
+                  </Modal>
+
+                </div>
                 {this.props.cards.map(this.renderCards)}
               </section>
             </div>
