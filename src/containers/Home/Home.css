@@ -1,13 +1,17 @@
 .landing {
-  margin: 2em 2em;;
+  margin: 2em 0;
   width: 100vw;
-  height: 60vh;
+  height: 50vh;
   color: #290C31;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  background-color: #ECFDFF;
 }
 
 .welcome {
   color: #29BF12;
-  margin-left: 1.5em;
+  margin-left: 3em;
+  padding-top: 1em;
   /*font-family: 'Indie Flower', cursive;*/
   /*font-size: 2em;*/
 }
@@ -30,4 +34,18 @@
 
 .signup-box {
   flex: 1;
+}
+
+.articles {
+  display: flex;
+  width: 80vw;
+  flex-direction: row;
+  margin: 1em auto;
+}
+
+article {
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  margin: .5em;
 }

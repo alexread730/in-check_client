@@ -16,7 +16,7 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="logo">
-          <NavLink to="/home" exact activeStyle={{
+          <NavLink to="/" exact activeStyle={{
             color: '#290C31'
           }}>
             <h2 className="logo">in-Check</h2>
