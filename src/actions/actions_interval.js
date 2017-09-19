@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const url = 'http://localhost:3000/api/v1/accounts/1/decks'
+import { ROOT_URL } from '../RootURL';
+const url = ROOT_URL + 'accounts/1/decks';
 
 export const UPDATE_INTERVAL = 'UPDATE_INTERVAL';
 export const EDIT_DECK = 'EDIT_DECK';
@@ -34,6 +35,7 @@ export const changeDeckForm = ({property}, value) => {
     }
   };
 };
+
 
 export const resetForm = () => {
   return {

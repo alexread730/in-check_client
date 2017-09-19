@@ -1,10 +1,11 @@
 import axios from 'axios';
-
-const url = 'http://localhost:3000/api/v1/accounts/1/decks'
+import { ROOT_URL } from '../RootURL';
+const url = ROOT_URL + 'accounts/1/decks';
 
 export const FETCH_DECKS = 'FETCH_DECKS';
 export const FETCH_ONE_DECK = 'FETCH_ONE_DECK';
 export const FETCH_DECK_INFO = 'FETCH_DECK_INFO';
+export const CREATE_CARD = 'CREATE_CARD';
 
 export function fetchDecks() {
   const request = axios.get(url);
@@ -31,4 +32,13 @@ export function fetchDeckInfo(id) {
     type: FETCH_DECK_INFO,
     payload: request
   };
+}
+
+export function createCard(id) {
+  const request = axios.post(`${url}/${id}`);
+
+  return {
+    type: CREATE_CARD,
+    payload: request
+  }
 }
