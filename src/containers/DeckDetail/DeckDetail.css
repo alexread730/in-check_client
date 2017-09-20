@@ -5,7 +5,10 @@
 .title {
   text-align: center;
   font-size: 3em;
-  padding-top: 1em;
+}
+
+.title h1 {
+  padding-top: -50px;
 }
 
 .new-card-trig:hover {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import DeckDetail  from '../../containers/DeckDetail/DeckDetail';
 
+import './DetailsContainer.css';
+
 export default class DeckList extends Component {
 
   constructor(props) {

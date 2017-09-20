@@ -10,7 +10,6 @@ const INITIAL_STATE = {
 }
 
 export default function(state = INITIAL_STATE, action) {
-  console.log(action);
   switch (action.type) {
     case UPDATE_DECK_FORM:
       return {

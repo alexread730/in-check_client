@@ -50,7 +50,7 @@ export const updateAddDeckForm = ({property}, value) => {
 
 export function addDeck(deck) {
   const today = new Date();
-  const dayNumber = today.getDay();
+  const dayNumber = today.getDay() + 1;
   deck['day_id'] = dayNumber;
   const request = axios.post(`${url}`, deck);
 

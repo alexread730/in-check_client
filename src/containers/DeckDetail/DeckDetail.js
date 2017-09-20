@@ -19,7 +19,7 @@ class DeckDetail extends Component {
     super();
 
     this.state = {
-      numCompleted: 1
+      numCompleted: 0
     }
 
     this.renderCards = this.renderCards.bind(this);

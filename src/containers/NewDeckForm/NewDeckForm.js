@@ -34,7 +34,7 @@ class NewDeckForm extends Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Field required>
-          <label>name</label>
+          <label>Name</label>
           <input type="text" placeholder='Computer Science' name="name" width={1} onChange={this.handleChange} />
         </Form.Field>
         <Form.Field required>
