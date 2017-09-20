@@ -13,12 +13,19 @@
 
 .term {
   flex: 1;
+  margin: 0 1em;
 }
 
 .def {
   flex: 2;
+  margin: 0 1em;
 }
 
 .hint {
+  flex: 1;
+}
+
+.completed {
+  margin: 0 1em;
   flex: 1;
 }

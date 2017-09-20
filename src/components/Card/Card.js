@@ -34,7 +34,7 @@ class Card extends Component {
           <h2 className="term">{this.props.details.term}</h2>
           <p className="def">{this.props.details.definition}</p>
           <p className="hint">Hint: {this.props.details.hint}</p>
-          <Checkbox label='Completed' checked={this.props.details.completed}/>
+          <Checkbox className="completed" label='Completed' checked={this.props.details.completed}/>
           <Button icon color={"blue"} size="mini" className="small-btn">
             <Icon name='edit' />
           </Button>

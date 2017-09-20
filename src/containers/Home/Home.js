@@ -50,17 +50,17 @@ class Home extends Component {
           <article>
             <Icon name="folder open outline" size="huge" color="grey"/>
             <h2>Create</h2>
-            <h4>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+            <h4>Leave your notecards at home! Create multiple study decks with terms, definitions, and hints to be tested on throughout the day.</h4>
           </article>
           <article>
             <Icon name="comments outline" size="huge" color="grey"/>
             <h2>Interact</h2>
-            <h4>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+            <h4>in-Check's back and forth texting dialogue helps you easily compare your response to the true definition.</h4>
           </article>
           <article>
             <Icon name="mobile" size="huge" color="grey"/>
-            <h2>Be Mobile</h2>
-            <h4>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+            <h2>Stay Mobile</h2>
+            <h4>in-Check sends all your study materials directly to your phone via text message. Bring your study materials wherever you go!</h4>
 
           </article>
         </section>

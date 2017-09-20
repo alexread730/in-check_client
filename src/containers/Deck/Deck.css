@@ -1,3 +1,18 @@
 .deck-item {
   margin: 0 auto;
 }
+
+.deck-cards {
+  display: inline-block;
+}
+
+.bottom-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #29BF12;
+}
+
+.tag {
+  max-height: 2.5em;
+}
