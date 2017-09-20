@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {RootURL} from '../RootURL';
 import { Route } from 'react-router-dom';
 
 import Header from './Header/Header';
