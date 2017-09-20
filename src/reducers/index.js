@@ -4,13 +4,15 @@ import CardsReducer from './reducer_cards';
 import DeckInfoReducer from './reducer_deck_info';
 import editDeckReducer from './reducer_editDeck';
 import newCardReducer from './reducer_newCard';
+import newDeckReducer from './reducer_newDeck';
 
 const rootReducer = combineReducers({
   decks: DecksReducer,
   cards: CardsReducer,
   deckInfo: DeckInfoReducer,
   deckForm: editDeckReducer,
-  newCard: newCardReducer
+  newCard: newCardReducer,
+  newDeck: newDeckReducer
 });
 
 export default rootReducer;

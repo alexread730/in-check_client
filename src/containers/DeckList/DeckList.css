@@ -1,11 +1,23 @@
 .deck-list {
   width: 80%;
   display: flex;
+  flex-direction: row;
   margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.add-deck {
+  text-align: center;
+  width: 45%;
+  max-width: 400px;
+  border: 1px solid #0C1319;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: #ECFDFF;
+  margin: 1em 1.5em;
 }
 
 .deck-item {
-  display: inline-block;
   width: 45%;
   max-width: 400px;
   border: 1px solid #0C1319;
@@ -15,6 +27,14 @@
   margin: 1em auto;
   padding: .5em;
   color: #0C1319;
+}
+
+.add-deck h2 {
+   color: #29BF12;
+}
+
+.add-deck:hover {
+  cursor: pointer;
 }
 
 .deck-item:hover {
