@@ -8,6 +8,14 @@
   padding-top: 1em;
 }
 
+.new-card-trig:hover {
+  cursor: pointer;
+}
+
+.new-card-trig {
+ /*color: #1678C2;*/
+}
+
 .deck-details {
   width: 50vw;
   margin: 0 auto;

@@ -60,7 +60,7 @@ class DeckDetail extends Component {
                 <section className="deck-details">
                   <h3>Cards Completed: {this.state.numCompleted}/{this.props.cards[0].length}</h3>
                   <Checkbox label="Active" defaultChecked={true} toggle />
-                  <Modal trigger={<Button color="green">Edit Deck</Button>}>
+                  <Modal trigger={<Button color="blue">Edit Deck</Button>}>
                     <Modal.Header>Edit Deck</Modal.Header>
                     <Modal.Content image>
                       <Modal.Description>
@@ -72,10 +72,8 @@ class DeckDetail extends Component {
                 </section>
               </section>
               <section>
-                <div className="card-item">
-                  <Modal trigger={<Button icon color={"blue"} size="mini" className="create-card-btn">
-                    Create New Card
-                  </Button>}>
+                <div className="card-item new-card-trig">
+                  <Modal trigger={<h3>Create New Card</h3>}>
                     <Modal.Header>Create Card</Modal.Header>
                     <Modal.Content image>
                       <Modal.Description>
@@ -84,7 +82,6 @@ class DeckDetail extends Component {
                       </Modal.Description>
                     </Modal.Content>
                   </Modal>
-
                 </div>
                 {this.props.cards.map(this.renderCards)}
               </section>
