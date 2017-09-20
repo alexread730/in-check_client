@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { editDeckInterval, changeDeckForm, resetForm } from '../../actions/actions_interval';
+import { editDeckInterval, changeDeckForm, resetForm, deleteDeck } from '../../actions/actions_interval';
+import { fetchDecks } from '../../actions/index';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { INTERVAL_OPTIONS, HOUR_OPTIONS } from '../../common';
+import { Link } from 'react-router-dom';
 
-import { Button, Form, Checkbox, Dropdown, Menu } from 'semantic-ui-react'
+import { Button, Form, Checkbox, Dropdown, Menu, Icon, Modal, Header } from 'semantic-ui-react'
 
 
 class DeckForm extends Component {
@@ -13,6 +15,7 @@ class DeckForm extends Component {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.deleteHandler = this.deleteHandler.bind(this);
   }
 
   componentDidMount() {
@@ -54,6 +57,15 @@ class DeckForm extends Component {
     return this.props.deckForm.deckDays.find(value => {return value === day}) ? true : false
   }
 
+  clickHandler(event) {
+    event.preventDefault();
+  }
+
+  deleteHandler(event) {
+    this.props.deleteDeck(this.props.deckInfo[0][0].deck_id)
+    this.props.fetchDecks();
+  }
+
   render() {
 
     return (
@@ -91,13 +103,27 @@ class DeckForm extends Component {
         </Form.Field>
         <Form.Field>
           <label>Deck Name</label>
-          <input type="text" placeholder='Deck Name' name="deckName" className='deck-name' width={1} defaultValue={this.props.deckInfo[0][0].name} onChange={this.handleChange} />
+          <input type="text" placeholder='Deck Name' name="deckName" className='deck-name' width={1} vlue={this.props.deckInfo[0][0].name} onChange={this.handleChange} />
         </Form.Field>
         <Form.Field>
           <label>Deck Description</label>
-          <input type="text" placeholder='Deck Description' name="deckDesc" width={4} defaultValue={this.props.deckInfo[0][0].description} onChange={this.handleChange}/>
+          <input type="text" placeholder='Deck Description' name="deckDesc" width={4} value={this.props.deckInfo[0][0].description} onChange={this.handleChange}/>
         </Form.Field>
         <Button type='submit' color="teal" onSubmit={this.handleSubmit}>Save</Button>
+        <Modal trigger={<Button onClick={this.clickHandler}>Delete Deck</Button>} basic size='small'>
+          <Header icon='archive' content='Archive Old Messages' />
+          <Modal.Content>
+            <p>Are you sure you want to delete this deck?</p>
+          </Modal.Content>
+          <Modal.Actions>
+            <Button basic color='red' inverted>
+              <Icon name='remove' /> No
+            </Button>
+            <Link to={"/decks"}><Button color='green' onClick={this.deleteHandler} inverted>
+              <Icon name='checkmark' /> Yes
+            </Button></Link>
+          </Modal.Actions>
+        </Modal>
       </Form>
     )
   }
@@ -108,7 +134,7 @@ function mapStateToProps({ deckForm, deckInfo }) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ editDeckInterval, changeDeckForm, resetForm }, dispatch);
+  return bindActionCreators({ editDeckInterval, changeDeckForm, resetForm, deleteDeck, fetchDecks }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeckForm);

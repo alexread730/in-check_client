@@ -9,6 +9,7 @@ export const UPDATE_DECK_FORM = 'UPDATE_DECK_FORM';
 export const RESET_FORM = 'RESET_FORM';
 export const CREATE_DECK = 'CREATE_DECK';
 export const UPDATE_ADD_DECK_FORM = 'UPDATE_ADD_DECK_FORM';
+export const DELETE_DECK = 'DELETE_DECK';
 
 export function updateDeckInterval(id, interval) {
   const request = axios.put(`${url}/${id}`, {
@@ -53,9 +54,19 @@ export function addDeck(deck) {
   const dayNumber = today.getDay() + 1;
   deck['day_id'] = dayNumber;
   const request = axios.post(`${url}`, deck);
+  console.log(deck);
 
   return {
     type: CREATE_DECK,
+    payload: deck
+  }
+}
+
+export function deleteDeck(deck) {
+  const request = axios.delete(`${url}/${deck}`);
+
+  return {
+    type: DELETE_DECK,
     payload: request
   }
 }

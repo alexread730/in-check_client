@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { updateAddDeckForm, addDeck } from '../../actions/actions_interval';
+import { fetchDecks } from '../../actions/index';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -14,14 +15,10 @@ class NewDeckForm extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidMount() {
-    // this.props.updateCardForm({property: 'deck_id'}, this.props.match.params.deck_id);
-    // this.props.updateCardForm({property: 'deckDays'}, daysArray);
-  }
-
   handleSubmit(e) {
     this.props.addDeck(this.props.newDeck);
-    // window.location.reload();
+    this.props.fetchDecks();
+    window.location.reload();
   }
 
 
@@ -56,7 +53,7 @@ function mapStateToProps({ newDeck }) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ updateAddDeckForm, addDeck }, dispatch);
+  return bindActionCreators({ updateAddDeckForm, addDeck, fetchDecks }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewDeckForm);
