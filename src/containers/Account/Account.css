@@ -1,0 +1,8 @@
+.container {
+  margin: 4em 8em;
+}
+
+.group {
+  display: flex;
+  flex-direction: row;
+}
