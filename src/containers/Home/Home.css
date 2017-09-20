@@ -8,26 +8,19 @@
   /*background-color: #ECFDFF;*/
   background-image: url('../../img/splash1.png');
   background-size: cover;
-}
-
-.welcome {
-  color: #29BF12;
-  margin-left: 3em;
-  padding-top: 1em;
-  /*font-family: 'Indie Flower', cursive;*/
-  /*font-size: 2em;*/
+  min-height: 300px;
 }
 
 
 .login-signup {
   width: 70vw;
-  margin: 5em auto;
+  margin: 6em auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   text-align: center;
   border-radius: 5px;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.6);
   padding: 1.5em;
 }
 
@@ -44,7 +37,7 @@
   display: flex;
   width: 80vw;
   flex-direction: row;
-  margin: 1em auto;
+  margin: .5em auto;
 }
 
 article {
@@ -52,4 +45,12 @@ article {
   justify-content: center;
   text-align: center;
   margin: .5em;
+}
+
+.articles h2 {
+  margin: 0px;
+}
+
+.articles h4 {
+  margin-top: 1em;
 }

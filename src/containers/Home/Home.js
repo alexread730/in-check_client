@@ -17,7 +17,6 @@ class Home extends Component {
     return (
       <div>
         <section className="landing">
-          <h2 className="welcome">Welcome to in-Check!</h2>
           <div className="login-signup">
             <div className="login-box">
               <h4>Login</h4>
