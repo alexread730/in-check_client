@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchDecks } from '../../actions/index';
+import NewDeckForm from '../NewDeckForm/NewDeckForm';
+
+import { Icon, Modal, Header } from 'semantic-ui-react';
 import  Deck from '../Deck/Deck'
 import './DeckList.css';
 
@@ -25,12 +28,30 @@ class DeckList extends Component {
     )
   }
 
+  handleClick() {
+
+  }
+
   render() {
     return(
       <section >
         <h1 className="title">Your Decks</h1>
         <div className="deck-list">
           {this.props.decks.map(this.renderList)}
+          <Modal trigger={
+            <div className="add-deck">
+              <h2>Create New Deck</h2>
+              <Icon name="add circle" size="huge" color="grey" />
+            </div>
+          }>
+            <Modal.Header>Create Deck</Modal.Header>
+            <Modal.Content image>
+              <Modal.Description>
+                <Header></Header>
+                <NewDeckForm match={this.props.match}/>
+              </Modal.Description>
+            </Modal.Content>
+          </Modal>
         </div>
       </section>
     )

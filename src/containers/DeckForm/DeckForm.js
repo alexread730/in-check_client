@@ -21,6 +21,8 @@ class DeckForm extends Component {
     })
     this.props.changeDeckForm({property: 'deck_id'}, this.props.match.params.deck_id);
     this.props.changeDeckForm({property: 'deckDays'}, daysArray);
+    this.props.changeDeckForm({property: 'name'}, this.props.deckInfo[0][0].name)
+    this.props.changeDeckForm({property: 'description'}, this.props.deckInfo[0][0].description)
   }
 
   handleSubmit(e) {
@@ -49,7 +51,6 @@ class DeckForm extends Component {
   }
 
   checkDays(day) {
-    console.log(day);
     return this.props.deckForm.deckDays.find(value => {return value === day}) ? true : false
   }
 
@@ -90,11 +91,11 @@ class DeckForm extends Component {
         </Form.Field>
         <Form.Field>
           <label>Deck Name</label>
-          <input type="text" placeholder='Deck Name' name="deckName" className='deck-name' width={1} onChange={this.handleChange} />
+          <input type="text" placeholder='Deck Name' name="deckName" className='deck-name' width={1} defaultValue={this.props.deckInfo[0][0].name} onChange={this.handleChange} />
         </Form.Field>
         <Form.Field>
           <label>Deck Description</label>
-          <input type="text" placeholder='Deck Description' name="deckDesc" width={4} onChange={this.handleChange}/>
+          <input type="text" placeholder='Deck Description' name="deckDesc" width={4} defaultValue={this.props.deckInfo[0][0].description} onChange={this.handleChange}/>
         </Form.Field>
         <Button type='submit' color="teal" onSubmit={this.handleSubmit}>Save</Button>
       </Form>

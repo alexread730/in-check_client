@@ -26,7 +26,7 @@ class Deck extends Component {
             <p>{this.props.details.description}</p>
             <div className="bottom-card">
               <Label className="tag" as='' color='blue' tag>{this.props.details.category_name}</Label>
-              <h3 className="deck-cards">{this.props.cards[0].length} Cards</h3>
+              {/* <h3 className="deck-cards">{this.props.cards[0].length} Cards</h3> */}
             </div>
           </Link>
       )
