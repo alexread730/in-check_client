@@ -32,15 +32,15 @@ class NewDeckForm extends Component {
       <Form onSubmit={this.handleSubmit}>
         <Form.Field required>
           <label>Name</label>
-          <input type="text" placeholder='Computer Science' name="name" width={1} onChange={this.handleChange} />
+          <input type="text" placeholder='Computer Science' name="name" width={1} onChange={this.handleChange} autoComplete="off" />
         </Form.Field>
         <Form.Field required>
           <label>Description</label>
-          <input type="text" placeholder="Terms and concepts about computer science." name="description" className='deck-name' width={1} onChange={this.handleChange} />
+          <input type="text" placeholder="Terms and concepts about computer science." name="description" className='deck-name' width={1} onChange={this.handleChange} autoComplete="off"/>
         </Form.Field>
         <Form.Field required>
           <label>Category</label>
-          <input type="text" placeholder="Science" name="category" className='deck-name' width={1} onChange={this.handleChange} />
+          <input type="text" placeholder="Science" name="category" className='deck-name' width={1} onChange={this.handleChange} autoComplete="off" />
         </Form.Field>
         <Button type='submit' color="blue" onSubmit={this.handleSubmit}>Save</Button>
       </Form>

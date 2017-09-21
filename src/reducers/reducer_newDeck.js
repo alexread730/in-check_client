@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   name: '',
   description: '',
   private: true,
-  active: false,
+  active: true,
   creator_id: 1,
   category: ''
 }

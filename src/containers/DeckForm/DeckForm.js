@@ -103,11 +103,11 @@ class DeckForm extends Component {
         </Form.Field>
         <Form.Field>
           <label>Deck Name</label>
-          <input type="text" placeholder='Deck Name' name="deckName" className='deck-name' width={1} vlue={this.props.deckInfo[0][0].name} onChange={this.handleChange} />
+          <input type="text" placeholder='Deck Name' name="deckName" className='deck-name' width={1} defaultValue={this.props.deckInfo[0][0].name} onChange={this.handleChange} autoComplete="off" />
         </Form.Field>
         <Form.Field>
           <label>Deck Description</label>
-          <input type="text" placeholder='Deck Description' name="deckDesc" width={4} value={this.props.deckInfo[0][0].description} onChange={this.handleChange}/>
+          <input type="text" placeholder='Deck Description' name="deckDesc" width={4} defaultValue={this.props.deckInfo[0][0].description} onChange={this.handleChange} autoComplete="off"/>
         </Form.Field>
         <Button type='submit' color="teal" onSubmit={this.handleSubmit}>Save</Button>
         <Modal trigger={<Button onClick={this.clickHandler}>Delete Deck</Button>} basic size='small'>

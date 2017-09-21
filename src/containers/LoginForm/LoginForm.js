@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 
 import { Button, Form} from 'semantic-ui-react'
@@ -23,7 +24,7 @@ class LoginForm extends Component {
           <label>Password</label>
           <input type="password" />
         </Form.Field>
-        <Button type='submit'>Submit</Button>
+        <Link to={'/decks'}><Button type='submit'>Submit</Button></Link>
       </Form>
 
     )
