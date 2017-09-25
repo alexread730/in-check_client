@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { ROOT_URL } from '../RootURL';
-const url = ROOT_URL + 'accounts/1/decks';
+const url = ROOT_URL + `/accounts/${localStorage.UserID}/decks`;
 
 export const UPDATE_INTERVAL = 'UPDATE_INTERVAL';
 export const EDIT_DECK = 'EDIT_DECK';

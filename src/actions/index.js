@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { ROOT_URL } from '../RootURL';
-const url = ROOT_URL + 'accounts/1/decks';
+const url = ROOT_URL + `/accounts/${localStorage.UserID}/decks`;
 
 export const FETCH_DECKS = 'FETCH_DECKS';
 export const FETCH_ONE_DECK = 'FETCH_ONE_DECK';

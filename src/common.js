@@ -1,3 +1,13 @@
+import axios from 'axios';
+
+export default function setAuthorizationToken(token) {
+  if (token) {
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  } else {
+    delete axios.defaults.headers.common['Authorization'];
+  }
+}
+
 export const HOUR_OPTIONS = [
   { key: 0, text: '12 AM', value: 0 },
   { key: 1, text: '1 AM', value: 1 },

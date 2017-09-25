@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 
-import { Icon } from 'semantic-ui-react'
+import { Icon, Button } from 'semantic-ui-react'
 import './Account.css';
 
 
@@ -11,6 +11,9 @@ export default class DeckDetail extends Component {
   constructor(props) {
     super();
 
+  }
+
+  handleSubmit(e) {
   }
 
   render() {
@@ -28,6 +31,7 @@ export default class DeckDetail extends Component {
           <Icon name="edit" size="large"/>
           <h2>4147588814</h2>
         </section>
+        <Button type='submit' onSubmit={this.handleSubmit}>Submit</Button>
       </div>
 
     )

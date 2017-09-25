@@ -3,8 +3,8 @@ import { UPDATE_SIGN_UP_FORM, SEND_SIGN_UP_CRED } from '../actions/actions_auth'
 const INITIAL_STATE = {
   firstName: '',
   lastName: '',
-  email: true,
-  password: true,
+  email: '',
+  password: '',
   phone: 1,
   deckId: null,
   lastText: null,
