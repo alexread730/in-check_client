@@ -5,6 +5,7 @@ import DeckInfoReducer from './reducer_deck_info';
 import editDeckReducer from './reducer_editDeck';
 import newCardReducer from './reducer_newCard';
 import newDeckReducer from './reducer_newDeck';
+import signUpFormReducer from './reducer_signUpForm';
 
 const rootReducer = combineReducers({
   decks: DecksReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   deckInfo: DeckInfoReducer,
   deckForm: editDeckReducer,
   newCard: newCardReducer,
-  newDeck: newDeckReducer
+  newDeck: newDeckReducer,
+  signUpForm: signUpFormReducer
 });
 
 export default rootReducer;
