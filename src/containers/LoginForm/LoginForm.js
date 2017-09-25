@@ -39,7 +39,6 @@ class LoginForm extends Component {
         </Form.Field>
         <Button type='submit' onSubmit={this.handleSubmit}>Submit</Button>
       </Form>
-
     )
   }
 }

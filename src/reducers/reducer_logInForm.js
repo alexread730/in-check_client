@@ -4,7 +4,8 @@ import axios from 'axios';
 
 const INITIAL_STATE = {
   email: '',
-  password: ''
+  password: '',
+  loggedIn: false
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -23,7 +24,7 @@ export default function(state = INITIAL_STATE, action) {
       setAuthorizationToken(token);
 
       return {
-        ...state
+        ...state, loggedIn: true
       }
     default:
       return state;

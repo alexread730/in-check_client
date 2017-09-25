@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { ROOT_URL } from '../RootURL';
-const url = ROOT_URL + `/accounts/${localStorage.UserID}/decks`;
 
 export const FETCH_DECKS = 'FETCH_DECKS';
 export const FETCH_ONE_DECK = 'FETCH_ONE_DECK';
@@ -9,8 +8,12 @@ export const CREATE_CARD = 'CREATE_CARD';
 export const UPDATE_CARD_FORM = 'UPDATE_CARD_FORM';
 export const DELETE_CARD = 'DELETE_CARD';
 
+function returnUrl() {
+  return ROOT_URL + `/accounts/${localStorage.UserID}/decks`;
+}
 
 export function fetchDecks() {
+  const url = returnUrl();
   const request = axios.get(url);
 
   return {
@@ -20,6 +23,7 @@ export function fetchDecks() {
 }
 
 export function fetchDeckCards(id) {
+  const url = returnUrl();
   const request = axios.get(`${url}/${id}`);
 
   return {
@@ -29,6 +33,7 @@ export function fetchDeckCards(id) {
 }
 
 export function fetchDeckInfo(id) {
+  const url = returnUrl();
   const request = axios.get(`${url}/${id}/info`);
 
   return {
@@ -38,6 +43,7 @@ export function fetchDeckInfo(id) {
 }
 
 export function addCard(card) {
+  const url = returnUrl();
   const request = axios.post(`${url}/${card.deck_id}/card`, card);
 
   return {
@@ -57,6 +63,7 @@ export function updateCardForm({property}, value) {
 }
 
 export function deleteCard(id, card) {
+  const url = returnUrl();
   const request = axios.delete(`${url}/${id}/card/${card}`);
   return {
     type: DELETE_CARD,

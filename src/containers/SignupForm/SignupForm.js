@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { sendSignUpCredentials, updateSignUpForm } from '../../actions/actions_auth';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 import { Button, Form} from 'semantic-ui-react'
@@ -50,7 +51,7 @@ class SignupForm extends Component {
           <label>Phone Number</label>
           <input placeholder='867-5309' name="phone" onChange={this.handleChange} />
         </Form.Field>
-        <Button type='submit' onSubmit={this.handleSubmit}>Submit</Button>
+        <Link to="/decks"><Button onClick={this.handleSubmit}>Submit</Button></Link>
       </Form>
     )
   }
