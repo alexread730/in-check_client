@@ -19,13 +19,22 @@ class DeckList extends Component {
   }
 
   renderList(deckData) {
-    return (
-      deckData.map(data => {
+    if (localStorage.UserID === 'undefined') {
+      return (
+        <div>
+          <h3 className="container">Loading...</h3>
+        </div>
+      )
+    } else {
         return (
-          <Deck details={data}/>
+          deckData.map(data => {
+            return (
+              <Deck details={data}/>
+            )
+          })
         )
-      })
-    )
+    }
+
   }
 
   handleClick() {
