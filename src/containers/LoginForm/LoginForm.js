@@ -37,7 +37,7 @@ class LoginForm extends Component {
           <label>Password</label>
           <input type="password" name="password" onChange={this.handleChange}/>
         </Form.Field>
-        <Button type='submit' onSubmit={this.handleSubmit}>Submit</Button>
+        <Link></Link><Button type='submit' onSubmit={this.handleSubmit}>Submit</Button>
       </Form>
     )
   }
