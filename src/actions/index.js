@@ -7,9 +7,24 @@ export const FETCH_DECK_INFO = 'FETCH_DECK_INFO';
 export const CREATE_CARD = 'CREATE_CARD';
 export const UPDATE_CARD_FORM = 'UPDATE_CARD_FORM';
 export const DELETE_CARD = 'DELETE_CARD';
+export const FETCH_ACCOUNT = 'FETCH_ACCOUNT';
 
 function returnUrl() {
   return ROOT_URL + `/accounts/${localStorage.UserID}/decks`;
+}
+
+function returnAccountUrl() {
+  return ROOT_URL + `/accounts/${localStorage.UserID}`
+}
+
+export function fetchAccount() {
+  const url = returnAccountUrl();
+  const request = axios.get(url);
+
+  return {
+    type: FETCH_ACCOUNT,
+    payload: request
+  }
 }
 
 export function fetchDecks() {

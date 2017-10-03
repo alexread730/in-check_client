@@ -19,7 +19,7 @@ class DeckList extends Component {
   }
 
   renderList(deckData) {
-    if (localStorage.UserID === 'undefined') {
+    if (!localStorage.UserID) {
       return (
         <div>
           <h3 className="container">Loading...</h3>

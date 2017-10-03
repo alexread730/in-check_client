@@ -20,7 +20,7 @@ class Home extends Component {
           <div className="login-signup">
             <div className="login-box">
               <h4>Login</h4>
-              <p>Here is where you login.</p>
+              <p>Log in with your existing account information</p>
               <Modal size="mini" trigger={<Button color="blue">Log In</Button>}>
                 <Modal.Header>Login</Modal.Header>
                 <Modal.Content image>
@@ -33,8 +33,8 @@ class Home extends Component {
             </div>
             <div className="signup-box">
               <h4>Sign-Up</h4>
-              <p>Here is where you sign-up.</p>
-              <Modal size="mini" trigger={<Button color="blue">Log In</Button>}>
+              <p>Sign up and create a new free account with your personal phone number!</p>
+              <Modal size="mini" trigger={<Button color="blue">Sign Up</Button>}>
                 <Modal.Header>Sign-Up</Modal.Header>
                 <Modal.Content image>
                   <Modal.Description>
