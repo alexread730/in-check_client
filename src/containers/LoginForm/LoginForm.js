@@ -19,7 +19,6 @@ class LoginForm extends Component {
 
   handleSubmit(e) {
     this.props.sendLogInCredentials(this.props.logInForm);
-    // window.location.reload();
   }
 
   handleChange(event) {

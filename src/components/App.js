@@ -11,7 +11,6 @@ class App extends Component {
 
 
   render() {
-    console.log(!localStorage.UserID);
     return (
       <div>
         <Route path="/" component={Header} />
