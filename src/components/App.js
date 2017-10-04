@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import Header from './Header/Header';
 import DeckList from '../containers/DeckList/DeckList';
@@ -11,11 +11,17 @@ class App extends Component {
 
 
   render() {
+    console.log(!localStorage.UserID);
     return (
       <div>
         <Route path="/" component={Header} />
-        <Route exact path="/" component={Home} />
-        <Route path="/decks" component={DeckList} />
+        <Route exact path="/" render={() => (
+          !localStorage.UserID ? (<Home />) : ( <Redirect to="/decks" />)
+        )}/>
+        {/* <Route path="/decks" component={DeckList} /> */}
+        <Route exact path="/decks" render={() => (
+          localStorage.UserID ? (<DeckList />) : ( <Redirect to="/" />)
+        )}/>
         <Route name="deck-detail" path="/deck-detail/:deck_id" component={DeckDetail} />
         <Route path="/account" component={Account} />
       </div>

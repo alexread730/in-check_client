@@ -5,14 +5,23 @@ import './Header.css';
 
 
 class Header extends Component {
-  //
-  //   state = {}
-  //
-  // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
 
 
   render() {
-    // const { activeItem } = this.state
+    if (!localStorage.UserID) {
+          return (
+            <div className="header">
+              <div className="logo">
+                <NavLink to="/" exact activeStyle={{
+                  color: '#290C31'
+                }}>
+                  <h2 className="logo">in-Check</h2>
+                </NavLink>
+              </div>
+            </div>
+          );
+    }
     return (
       <div className="header">
         <div className="logo">

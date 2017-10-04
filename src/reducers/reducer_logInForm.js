@@ -1,7 +1,6 @@
 import { UPDATE_LOG_IN_FORM, SEND_LOG_IN_CRED } from '../actions/actions_auth';
 import { FETCH_ACCOUNT } from '../actions/index';
 import setAuthorizationToken from '../common';
-import axios from 'axios';
 
 const INITIAL_STATE = {
   email: '',
