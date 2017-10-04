@@ -8,7 +8,8 @@ const INITIAL_STATE = {
   loggedIn: false,
   firstName: '',
   lastName: '',
-  phone: null
+  phone: null,
+  error: null
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -19,18 +20,28 @@ export default function(state = INITIAL_STATE, action) {
         [action.payload.property]: action.payload.value
       }
     case SEND_LOG_IN_CRED:
-      const token = action.payload.data.token;
-      const id = action.payload.data.id;
-      localStorage.setItem('Token', token);
-      localStorage.setItem('UserID', id);
+      if (action.error === true) {
+        return {
+          ...state,
+          loggedIn: false,
+          error: action.payload.response.data.message
+        }
+      } else {
+        const token = action.payload.data.token;
+        const id = action.payload.data.id;
+        localStorage.setItem('Token', token);
+        localStorage.setItem('UserID', id);
 
-      setAuthorizationToken(token);
+        setAuthorizationToken(token);
+        window.location.reload();
 
-      return {
-        ...state, loggedIn: true
+        return {
+          ...state,
+          loggedIn: true,
+          error: null
+        }
       }
     case FETCH_ACCOUNT:
-      console.log(action.payload);
       return {
         ...state,
         firstName: action.payload.data[0].firstName,

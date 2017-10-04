@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 
-import { Button, Form} from 'semantic-ui-react'
+import { Button, Form, Message } from 'semantic-ui-react'
 import './LoginForm.css';
 
 
@@ -28,6 +28,11 @@ class LoginForm extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
+        {(this.props.logInForm.error)
+          ? (<Message negative>
+            <Message.Header>{this.props.logInForm.error}</Message.Header>
+          </Message>)
+          : null  }
         <Form.Field>
           <label>Email</label>
           <input type="email" placeholder='example@mail.com' name="email" onChange={this.handleChange} />
