@@ -19,13 +19,24 @@ class DeckList extends Component {
   }
 
   renderList(deckData) {
-    return (
-      deckData.map(data => {
+    if (!localStorage.UserID) {
+      return (
+        <div>
+          <h3 className="container">Loading...</h3>
+        </div>
+      )
+    } else if (!deckData) {
+      return null
+    } else {
         return (
-          <Deck details={data}/>
+          deckData.map(data => {
+            return (
+              <Deck details={data}/>
+            )
+          })
         )
-      })
-    )
+    }
+
   }
 
   handleClick() {
@@ -33,28 +44,37 @@ class DeckList extends Component {
   }
 
   render() {
-    return(
-      <section >
-        <h1 className="title">Your Decks</h1>
-        <div className="deck-list">
-          {this.props.decks.map(this.renderList)}
-          <Modal trigger={
-            <div className="add-deck">
-              <h2>Create New Deck</h2>
-              <Icon name="add circle" size="huge" color="grey" />
-            </div>
-          }>
-            <Modal.Header>Create Deck</Modal.Header>
-            <Modal.Content image>
-              <Modal.Description>
-                <Header></Header>
-                <NewDeckForm match={this.props.match}/>
-              </Modal.Description>
-            </Modal.Content>
-          </Modal>
+    if (!localStorage.UserID) {
+      return (
+        <div>
+          <h3 className="container">Please Log In</h3>
         </div>
-      </section>
-    )
+      )
+    } else {
+      return(
+        <section >
+          <h1 className="title">Your Decks</h1>
+          <div className="deck-list">
+            {this.props.decks.map(this.renderList)}
+            <Modal trigger={
+              <div className="add-deck">
+                <h2>Create New Deck</h2>
+                <Icon name="add circle" size="huge" color="grey" />
+              </div>
+            }>
+              <Modal.Header>Create Deck</Modal.Header>
+              <Modal.Content image>
+                <Modal.Description>
+                  <Header></Header>
+                  <NewDeckForm match={this.props.match}/>
+                </Modal.Description>
+              </Modal.Content>
+            </Modal>
+          </div>
+        </section>
+      )
+    }
+
   }
 }
 
