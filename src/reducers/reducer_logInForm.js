@@ -1,4 +1,4 @@
-import { UPDATE_LOG_IN_FORM, SEND_LOG_IN_CRED } from '../actions/actions_auth';
+import { UPDATE_LOG_IN_FORM, SEND_LOG_IN_CRED, SEND_SIGN_UP_CRED } from '../actions/actions_auth';
 import { FETCH_ACCOUNT } from '../actions/index';
 import setAuthorizationToken from '../common';
 
@@ -34,7 +34,6 @@ export default function(state = INITIAL_STATE, action) {
 
         setAuthorizationToken(token);
         window.location.reload();
-
         return {
           ...state,
           loggedIn: true,
@@ -48,6 +47,27 @@ export default function(state = INITIAL_STATE, action) {
         lastName: action.payload.data[0].lastName,
         phone: action.payload.data[0].phone,
         email: action.payload.data[0].email
+      }
+    case SEND_SIGN_UP_CRED:
+      if (action.error === true) {
+        return {
+          ...state,
+          loggedIn: false,
+          error: action.payload.response.data.message
+        }
+      } else {
+        const token = action.payload.data.token;
+        const id = action.payload.data.id;
+        localStorage.setItem('Token', token);
+        localStorage.setItem('UserID', id);
+
+        setAuthorizationToken(token);
+        window.location.reload();
+        return {
+          ...state,
+          loggedIn: true,
+          error: null
+        }
       }
     default:
       return state;

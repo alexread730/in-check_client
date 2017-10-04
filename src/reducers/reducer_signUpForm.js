@@ -19,11 +19,6 @@ export default function(state = INITIAL_STATE, action) {
         ...state,
         [action.payload.property]: action.payload.value
       }
-    case SEND_SIGN_UP_CRED:
-    console.log(action.payload);
-      return {
-        ...state
-      }
     default:
       return state;
   }

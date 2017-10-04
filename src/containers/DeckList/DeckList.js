@@ -25,6 +25,8 @@ class DeckList extends Component {
           <h3 className="container">Loading...</h3>
         </div>
       )
+    } else if (!deckData) {
+      return null
     } else {
         return (
           deckData.map(data => {
