@@ -1,4 +1,4 @@
-import { UPDATE_SIGN_UP_FORM, SEND_SIGN_UP_CRED } from '../actions/actions_auth';
+import { UPDATE_SIGN_UP_FORM } from '../actions/actions_auth';
 
 const INITIAL_STATE = {
   firstName: '',

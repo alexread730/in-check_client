@@ -81,6 +81,7 @@ export default function(state = INITIAL_STATE, action) {
           error: `Enter a 10 digit phone number with no special characters.`
         }
       }
+      break;
 
     default:
       return state;

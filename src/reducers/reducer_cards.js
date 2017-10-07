@@ -7,7 +7,7 @@ export default function(state = [], action) {
       return [ action.payload.data ];
     case DELETE_CARD:
       let newState = [state[0].filter(card => {
-        return (card.id != action.payload.data.card);
+        return (card.id !== action.payload.data.card);
       })]
 
       return newState;
