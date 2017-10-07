@@ -54,7 +54,6 @@ export function addDeck(deck) {
   const dayNumber = today.getDay() + 1;
   deck['day_id'] = dayNumber;
   const request = axios.post(`${url}`, deck);
-  console.log(deck);
 
   return {
     type: CREATE_DECK,

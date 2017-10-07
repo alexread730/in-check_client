@@ -5,7 +5,7 @@ const INITIAL_STATE = {
   description: '',
   private: true,
   active: true,
-  creator_id: 1,
+  creator_id: localStorage.UserID,
   category: ''
 }
 

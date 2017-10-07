@@ -74,7 +74,6 @@ export default function(state = INITIAL_STATE, action) {
         }
       }
     case CHANGE_PHONE_ERROR:
-      console.log(action);
       if (action.payload === true) {
         return {
           ...state,
