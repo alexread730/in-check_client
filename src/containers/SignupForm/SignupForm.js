@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { sendSignUpCredentials, updateSignUpForm } from '../../actions/actions_auth';
+import { sendSignUpCredentials, updateSignUpForm, phoneError } from '../../actions/actions_auth';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
-
-import { Button, Form} from 'semantic-ui-react'
+import { Button, Form, Message } from 'semantic-ui-react'
 import './SignupForm.css';
 
 
@@ -19,8 +17,12 @@ class SignupForm extends Component {
   }
 
   handleSubmit(e) {
-    this.props.sendSignUpCredentials(this.props.signUpForm);
-    // window.location.reload();
+    console.log('called fn');
+    if (this.props.signUpForm.phone.match(/\d{10}/)) {
+      this.props.sendSignUpCredentials(this.props.signUpForm);
+    } else {
+      this.props.phoneError(true);
+    }
   }
 
 
@@ -30,7 +32,12 @@ class SignupForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form>
+        {(this.props.logInForm.error)
+          ? (<Message negative>
+            <Message.Header>{this.props.logInForm.error}</Message.Header>
+          </Message>)
+          : null  }
         <Form.Field>
           <label>First Name</label>
           <input placeholder='First Name' name="firstName" onChange={this.handleChange}/>
@@ -49,20 +56,20 @@ class SignupForm extends Component {
         </Form.Field>
         <Form.Field>
           <label>Phone Number</label>
-          <input placeholder='867-5309' name="phone" onChange={this.handleChange} />
+          <input placeholder='4148675309' name="phone" onChange={this.handleChange} />
         </Form.Field>
-        <Link to="/decks"><Button onClick={this.handleSubmit}>Submit</Button></Link>
+        <Button onClick={this.handleSubmit}>Submit</Button>
       </Form>
     )
   }
 }
 
-function mapStateToProps({ signUpForm }) {
-  return { signUpForm }
+function mapStateToProps({ signUpForm, logInForm }) {
+  return { signUpForm, logInForm }
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ updateSignUpForm, sendSignUpCredentials }, dispatch);
+  return bindActionCreators({ updateSignUpForm, sendSignUpCredentials, phoneError }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

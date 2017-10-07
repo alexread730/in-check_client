@@ -1,4 +1,8 @@
-import { UPDATE_LOG_IN_FORM, SEND_LOG_IN_CRED, SEND_SIGN_UP_CRED } from '../actions/actions_auth';
+import { UPDATE_LOG_IN_FORM,
+  SEND_LOG_IN_CRED,
+  SEND_SIGN_UP_CRED,
+  CHANGE_PHONE_ERROR } from '../actions/actions_auth';
+
 import { FETCH_ACCOUNT } from '../actions/index';
 import setAuthorizationToken from '../common';
 
@@ -69,6 +73,16 @@ export default function(state = INITIAL_STATE, action) {
           error: null
         }
       }
+    case CHANGE_PHONE_ERROR:
+      console.log(action);
+      if (action.payload === true) {
+        return {
+          ...state,
+          loggedIn: false,
+          error: `Enter a 10 digit phone number with no special characters.`
+        }
+      }
+
     default:
       return state;
   }

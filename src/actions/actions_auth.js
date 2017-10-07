@@ -7,6 +7,7 @@ export const UPDATE_SIGN_UP_FORM = 'UPDATE_SIGN_UP_FORM';
 export const SEND_SIGN_UP_CRED = 'SEND_SIGN_UP_CRED';
 export const UPDATE_LOG_IN_FORM = 'UPDATE_LOG_IN_FORM';
 export const SEND_LOG_IN_CRED = 'SEND_LOG_IN_CRED';
+export const CHANGE_PHONE_ERROR = 'CHANGE_PHONE_ERROR';
 
 export const updateSignUpForm = ({property}, value) => {
   return {
@@ -19,6 +20,7 @@ export const updateSignUpForm = ({property}, value) => {
 };
 
 export function sendSignUpCredentials(creds) {
+  console.log('sent creds');
   const request = axios.post(`${url}/signup`, creds);
   return {
     type: SEND_SIGN_UP_CRED,
@@ -42,4 +44,11 @@ export function sendLogInCredentials(creds) {
     type: SEND_LOG_IN_CRED,
     payload: request
   };
+}
+
+export function phoneError(condition){
+  return {
+    type: CHANGE_PHONE_ERROR,
+    payload: condition
+  }
 }
