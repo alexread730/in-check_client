@@ -8,6 +8,7 @@ import { fetchAccount } from '../../actions/index'
 import { Icon, Button } from 'semantic-ui-react'
 import './Account.css';
 
+//need to figure out why logout button isn't on deployed version
 
 class Account extends Component {
 
