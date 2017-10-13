@@ -9,6 +9,7 @@ import { Icon, Button } from 'semantic-ui-react'
 import './Account.css';
 
 //need to figure out why logout button isn't on deployed version
+//comment
 
 class Account extends Component {
 
