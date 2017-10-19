@@ -14,7 +14,9 @@
   /*border-radius: 5px;*/
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   background-color: #ECFDFF;
-  margin: 1em 1.5em;
+  margin: 1em auto;
+  -webkit-transition: box-shadow .5s;
+ transition-timing-function: ease;
 }
 
 .deck-item {
@@ -27,6 +29,8 @@
   margin: 1em auto;
   padding: .5em;
   color: #0C1319;
+   -webkit-transition: box-shadow .5s;
+  transition-timing-function: ease;
 }
 
 .add-deck h2 {
@@ -35,10 +39,12 @@
 
 .add-deck:hover {
   cursor: pointer;
+  box-shadow: 8px 8px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
 .deck-item:hover {
   color: #0C1319;
+  box-shadow: 8px 8px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
 .deck-item h2{

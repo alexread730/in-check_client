@@ -22,6 +22,7 @@ class Deck extends Component {
     if (this.props.cards[0]) {
       return(
           <Link to={`deck-detail/${this.props.details.deck_id}`} key={this.props.details.name} className="deck-item">
+            <div className="overlay"></div>
             <h2>{this.props.details.deck_name}</h2>
             <p>{this.props.details.description}</p>
             <div className="bottom-card">
