@@ -11,9 +11,9 @@
   width: 45%;
   max-width: 400px;
   border: 1px solid #0C1319;
-  /*border-radius: 5px;*/
+  border-radius: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  background-color: #ECFDFF;
+  /*background-color: #ECFDFF;*/
   margin: 1em auto;
   -webkit-transition: box-shadow .5s;
  transition-timing-function: ease;
@@ -22,10 +22,10 @@
 .deck-item {
   width: 45%;
   max-width: 400px;
-  border: 1px solid #0C1319;
-  /*border-radius: 30px;*/
+  border: .5px solid black;
+  border-radius: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  background-color: #ECFDFF;
+  /*background-color: #b2f3ff; */
   margin: 1em auto;
   padding: .5em;
   color: #0C1319;
@@ -34,7 +34,7 @@
 }
 
 .add-deck h2 {
-   color: #29BF12;
+  color: #29BF12;
 }
 
 .add-deck:hover {
@@ -50,6 +50,7 @@
 .deck-item h2{
  text-align: center;
  color: #29BF12;
+ font-style: italic;
 }
 
 .title {
